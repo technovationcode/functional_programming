@@ -23,7 +23,7 @@ public class TestCharacters extends TestCase {
         if(map.containsKey('q'))
             q = map.get('q');
         if(map.containsKey('f'))
-            f = (int) Characters.imperative(test, map).get('f');
+            f = map.get('f');
 
         assertEquals(3, a);
         assertEquals(2, b);
