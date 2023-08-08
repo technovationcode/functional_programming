@@ -15,17 +15,15 @@ public class Characters {
                 "hagbstz5fscvcnvk6dmmaozpieytruao8qlnxmsmx" +
                 "loikmn*juyhbvgtr]fcxdeswsza]qwsxcderfvbgt";
 
-        String test = "@1aaabbiii#iq";
-
         Map<Character, Integer> map = new HashMap<>();
 
-        imperative(test, map);
+        System.out.println(imperative(characters, map));
 
     }
-    public static void declarative(String test, Map<Character, Integer> map){
+    public static Map declarative(String characters, Map<Character, Integer> map){
         // Using the Character List, will put every character and initialize the value as 1,
         // then increase the value by 1 if repeats
-        convert(test).stream()
+        convert(characters).stream()
                 .filter(Character::isLetter)
                 .forEach(character -> {
                     if(map.containsKey(character)){
@@ -36,10 +34,10 @@ public class Characters {
                 });
 
         // Print the map
-        System.out.println(map);
+        return map;
     }
-    public static void imperative(String test, Map<Character, Integer> map){
-        List<Character> list = convert(test);
+    public static Map imperative(String characters, Map<Character, Integer> map){
+        List<Character> list = convert(characters);
         for(int i = 0; i < list.size(); i++){
             if(Character.isLetter(list.get(i))){
                 if(!map.containsKey(list.get(i))){
@@ -50,7 +48,7 @@ public class Characters {
             }
         }
 
-        System.out.println(map);
+        return map;
     }
 
     // Convert String to Character List
