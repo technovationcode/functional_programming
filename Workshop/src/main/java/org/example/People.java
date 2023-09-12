@@ -18,6 +18,8 @@ public class People {
                 new Person("Josh", "Los Angeles", 42)
         );
 
+        people.forEach(System.out::println);
+        System.out.println();
 
         declarative(people);
 
@@ -30,12 +32,16 @@ public class People {
                 .filter(person -> person.getCity().equals("Monterrey"))
                 .map(Person::getName)
                 .forEach(System.out::println);
+        System.out.println();
+
         // Filter people younger than 30
         System.out.println("People younger than 30: ");
         people.stream()
                 .filter(person -> person.getAge() < 30)
                 .map(Person::getName)
                 .forEach(System.out::println);
+        System.out.println();
+
         // Get just the names of the people and then group it by City
         System.out.println("Grouping: ");
         System.out.println(people.stream()
@@ -50,12 +56,16 @@ public class People {
             if (people.get(i).getCity().equals("Monterrey"))
                 System.out.println(people.get(i).getName());
         }
+        System.out.println();
+
         // Filter people younger than 30
         System.out.println("People younger than 30: ");
         for (int i = 0; i < people.size(); i++) {
             if (people.get(i).getAge() < 30)
                 System.out.println(people.get(i).getName());
         }
+        System.out.println();
+
         // Get just the names of the people and then group it by City
         System.out.println("Grouping: ");
         HashMap<String, List<String>> groups = new HashMap<>();
